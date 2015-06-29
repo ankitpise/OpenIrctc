@@ -13,7 +13,7 @@ Open Irctc is open PHP library for fetching realtime PNR Status & Railway Schedu
 
 Requirements:
 
-* [PHP-Curl] - PHP Curl Extension
+* [PHP-Curl] - HTML enhanced for web apps!
 
 ### Loading Library
 
@@ -44,8 +44,12 @@ $irctc->get_train_schedule(); // not necessary if want to check train details of
 Help Us Making This library better
 Currently Maintained by [Ankit Pise]
 
+### Licensing
+Released Under [MIT License]
 
-
+### Note
+This piece of code is issued as an experimental code. Use only for educational purposes. Author does not take any responsibility of any harmful / misuse caused by end user.
 
 [PHP-Curl]:http://php.net/manual/en/book.curl.php
 [Ankit Pise]:http://twitter.com/ankitpise
+[MIT License]:https://github.com/ankitpise/OpenIrctc/blob/master/LICENSE
