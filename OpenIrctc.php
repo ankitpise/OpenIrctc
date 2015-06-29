@@ -12,7 +12,7 @@ class OpenIrctc {
     protected $pnr_e_url = 'http://www.indianrail.gov.in/cgi_bin/inet_pnstat_cgi_10521.cgi';
     protected $schedule_e_url = 'http://www.indianrail.gov.in/cgi_bin/inet_trnnum_cgi.cgi';
     protected $pnr_url, $postFields;
-    public function __construct($pnr_id){
+    public function __construct($pnr_id = null){
         $this->pnr_id = $pnr_id;
     }
 
@@ -26,7 +26,10 @@ class OpenIrctc {
         }
     }
 
-    public function pnr_full_check(){
+    public function pnr_full_check($pnr_id = null){
+		if($pnr_id != null){
+			$this->pnr_id = $pnr_id;
+		}
         if(!function_exists('curl_init')){
             die('Curl module is required to use this library');
         }
