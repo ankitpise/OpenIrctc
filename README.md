@@ -13,7 +13,7 @@ Open Irctc is open PHP library for fetching realtime PNR Status & Railway Schedu
 
 Requirements:
 
-* [PHP-Curl] - HTML enhanced for web apps!
+* [PHP-Curl] - PHP Library to make external HTTP request.
 
 ### Loading Library
 
