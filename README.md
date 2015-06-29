@@ -1,1 +1,1 @@
-# OpenIrctc Is Open Library For Fetching Train Latest Schedule from official Indian Railways Website & Fetch PNR Information
+# OpenIrctc Is Library that creates API with Indian Govt Railway
