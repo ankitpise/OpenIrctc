@@ -19,7 +19,7 @@ class OpenIrctc {
     public function set_language($language = "english"){
         if(strtolower($language) === 'english'){
             $this->pnr_url = $this->pnr_e_url;
-            $this->postFields = 'lccp_pnrno1='. $this->pnr_id .'&lccp_cap_val=25000&lccp_capinp_val=25000';
+            $this->postFields = 'lccp_pnrno1='. $this->pnr_id .'&lccp_cap_value=25000&lccp_capinp_value=25000';
         } elseif(strtolower($language) === 'hindi'){
             $this->pnr_url = $this->pnr_h_url;
             $this->postFields = 'lccp_pnrno1='. $this->pnr_id .'&submit=Get PNR Status';
