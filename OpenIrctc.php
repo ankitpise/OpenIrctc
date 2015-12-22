@@ -9,7 +9,7 @@ error_reporting(0);
 class OpenIrctc {
     protected $pnr_id, $train_number;
     protected $pnr_h_url = 'http://www.indianrail.gov.in/cgi_bin/inet_pnrstat_cgi_hindi.cgi';
-    protected $pnr_e_url = 'http://www.indianrail.gov.in/cgi_bin/inet_pnstat_cgi_10521.cgi';
+    protected $pnr_e_url = 'http://www.indianrail.gov.in/cgi_bin/inet_pnstat_cgi_2484.cgi';
     protected $schedule_e_url = 'http://www.indianrail.gov.in/cgi_bin/inet_trnnum_cgi.cgi';
     protected $pnr_url, $postFields;
     public function __construct($pnr_id = null){
@@ -40,9 +40,10 @@ class OpenIrctc {
     protected function call_pnr_url(){
 
         $http_headers = array(
+            'User-Agent:Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0',
             'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Language:en-US,en;q=0.8,hi;q=0.6,mr;q=0.4',
-            'Referer:http://www.indianrail.gov.in/valid.php',
+            'Referer:http://www.indianrail.gov.in/cgi_bin/inet_pnstat_cgi_2484.cgi',
             'Origin:http://www.indianrail.gov.in',
             'Host:www.indianrail.gov.in',
             'Content-Type:application/x-www-form-urlencoded',
@@ -56,7 +57,6 @@ class OpenIrctc {
         curl_setopt($curl, CURLOPT_POSTFIELDS, $this->postFields);
         $result =  curl_exec($curl);
         curl_close($curl);
-
         return $result;
     }
 
