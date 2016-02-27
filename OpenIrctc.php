@@ -7,7 +7,7 @@
  */
 error_reporting(0);
 class OpenIrctc {
-    protected $pnr_id, $train_number;
+    private $pnr_id, $train_number;
     protected $pnr_h_url = 'http://www.indianrail.gov.in/cgi_bin/inet_pnrstat_cgi_hindi.cgi';
     protected $pnr_e_url = 'http://www.indianrail.gov.in/cgi_bin/inet_pnstat_cgi_2484.cgi';
     protected $schedule_e_url = 'http://www.indianrail.gov.in/cgi_bin/inet_trnnum_cgi.cgi';
@@ -64,6 +64,7 @@ class OpenIrctc {
         $htmlDom = new DOMDocument();
         $htmlDom->loadHTML($html);
         $finder = new DOMXPath($htmlDom);
+        //echo $html;
         $pnr_status_classname= 'table_border_both';
         $pnr_status_info = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $pnr_status_classname ')]");
 
@@ -94,9 +95,10 @@ class OpenIrctc {
 
 
     public function get_train_schedule($train_number = null){
-        if($train_number === null){
-            $train_number = $this->train_number;
+        if($train_number != null){
+            $this->train_number = $train_number;
         }
+
         $html_data = $this->call_trains_url();
         $htmlDom = new DOMDocument();
         $htmlDom->loadHTML($html_data);
