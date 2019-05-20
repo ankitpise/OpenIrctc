@@ -1,3 +1,5 @@
+# Is not maintained anymore, might not work
+
 # OpenIrctc - PHP API to check PNR & Train Schedule
 
 Open Irctc is open PHP library for fetching realtime PNR Status & Railway Schedule with Train Number
